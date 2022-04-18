@@ -25,4 +25,8 @@ io.on('connection', (socket) => {
             io.emit('startGame', socket.id) // the 2nd player will be chosen as referee
         }
     })
+
+    socket.on('paddleMove', (paddleData) => {
+        socket.broadcast.emit('paddleMove', paddleData) // fwd only to the other player
+    })
 })
