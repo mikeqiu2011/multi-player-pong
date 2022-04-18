@@ -22,7 +22,7 @@ io.on('connection', (socket) => {
 
         if (readyPlayerCount == 2) {
             //broadcast startgame
-
+            io.emit('startGame', socket.id) // the 2nd player will be chosen as referee
         }
     })
 })
