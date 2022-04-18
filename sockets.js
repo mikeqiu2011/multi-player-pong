@@ -1,7 +1,7 @@
 let readyPlayerCount = 0;
 
 function listen(io) {
-  const pongNamespace = io.of('/pong');
+  const pongNamespace = io.of('/pong'); // create namespace
   pongNamespace.on('connection', (socket) => {
     let room;
 
@@ -31,7 +31,7 @@ function listen(io) {
     socket.on('disconnect', (reason) => {
       console.log(`Client ${socket.id} disconnected: ${reason}`);
       socket.leave(room);
-    });   
+    });
   })
 }
 

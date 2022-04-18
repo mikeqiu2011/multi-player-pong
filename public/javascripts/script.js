@@ -1,7 +1,7 @@
 // Canvas Related 
 const canvas = document.createElement('canvas');
 const context = canvas.getContext('2d');
-const socket = io('/pong');
+const socket = io('/pong');  // separate name space
 let isReferee = false;
 let paddleIndex = 0;
 
@@ -12,8 +12,8 @@ let height = 700;
 let paddleHeight = 10;
 let paddleWidth = 50;
 let paddleDiff = 25;
-let paddleX = [ 225, 225 ];
-let trajectoryX = [ 0, 0 ];
+let paddleX = [225, 225];
+let trajectoryX = [0, 0];
 let playerMoved = false;
 
 // Ball
@@ -27,7 +27,7 @@ let speedY = 2;
 let speedX = 0;
 
 // Score for Both Players
-let score = [ 0, 0 ];
+let score = [0, 0];
 
 // Create Canvas Element
 function createCanvas() {
