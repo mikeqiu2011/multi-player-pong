@@ -20,7 +20,7 @@ io.on('connection', (socket) => {
         console.log('Player ready', socket.id);
         readyPlayerCount++
 
-        if (readyPlayerCount == 2) {
+        if (readyPlayerCount % 2 == 0) {  // solve problem when user reconnect but game not restarted
             //broadcast startgame
             io.emit('startGame', socket.id) // the 2nd player will be chosen as referee
         }
@@ -32,5 +32,9 @@ io.on('connection', (socket) => {
 
     socket.on('ballMove', (ballData) => {
         socket.broadcast.emit('ballMove', ballData)
+    })
+
+    socket.on('disconnect', (reason) => {
+        console.log('client disconnected', socket.id, reason);
     })
 })

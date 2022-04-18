@@ -227,11 +227,11 @@ socket.on('paddleMove', (paddleData) => {
 })
 
 socket.on('ballMove', (ballData) => {
-  // ballX = ballData.ballX
-  // ballY = ballData.ballY
-  // score = ballData.score
+  ballX = ballData.ballX
+  ballY = ballData.ballY
+  score = ballData.score
 
-  ({ ballX, ballY, score } = ballData)
+  // ({ ballX, ballY, score } = ballData)
 
 })
 
